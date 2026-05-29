@@ -41,9 +41,14 @@ public class DiscordCommandListener extends ListenerAdapter {
         }
 
         String authorName = event.getAuthor().getName();
-        String raw = plugin.getConfig().getString("format.discord-to-minecraft", "<gray>[Discord] <aqua>%s: <white>%s")
-            .formatted(authorName, message);
-        Component component = MiniMessage.miniMessage().deserialize(raw);
+        String prefixColor = plugin.getConfig().getString("colors.discord-prefix", "gray");
+        String nameColor = plugin.getConfig().getString("colors.discord-name", "aqua");
+        String msgColor = plugin.getConfig().getString("colors.discord-message", "white");
+        String fmt = plugin.getConfig().getString("format.discord-to-minecraft", "<gray>[Discord] <aqua>%s: <white>%s")
+            .replace("{prefix}", "<" + prefixColor + ">")
+            .replace("{name}", "<" + nameColor + ">")
+            .replace("{message}", "<" + msgColor + ">");
+        Component component = MiniMessage.miniMessage().deserialize(fmt.formatted(authorName, message));
         Bukkit.broadcast(component);
     }
 
