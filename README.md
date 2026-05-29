@@ -73,6 +73,21 @@ Output: `build/libs/DiscordBridge-1.0.0.jar`
 
 Результат: `build/libs/DiscordBridge-1.0.0.jar`
 
+### Настройка цветов
+
+Цвета для Discord → Minecraft чата меняются в `config.yml`:
+
+```yaml
+colors:
+  discord-prefix: "gray"    # цвет тега [Discord]
+  discord-name: "aqua"      # цвет ника игрока
+  discord-message: "white"  # цвет текста сообщения
+```
+
+Доступные цвета: `black`, `dark_blue`, `dark_green`, `dark_aqua`, `dark_red`, `dark_purple`, `gold`, `gray`, `dark_gray`, `blue`, `green`, `aqua`, `red`, `light_purple`, `yellow`, `white`.
+
+Просто меняешь название цвета и перезапускаешь сервер.
+
 ### Требования
 
 - Paper 1.21.1+
@@ -95,8 +110,23 @@ bot-user-id: ""
 # Message formats / Форматы сообщений
 format:
   minecraft-to-discord: "**%s**: %s"
-  discord-to-minecraft: "<gray>[Discord] <aqua>%s: <white>%s"
+  discord-to-minecraft: "<{prefix}>[Discord] <{name}>%s: <{message}>%s"
+
+# Colors for Discord-to-Minecraft chat / Цвета для Discord -> Minecraft чата
+# Available colors / Доступные цвета:
+#   black, dark_blue, dark_green, dark_aqua, dark_red, dark_purple,
+#   gold, gray, dark_gray, blue, green, aqua, red, light_purple, yellow, white
+colors:
+  discord-prefix: "gray"
+  discord-name: "aqua"
+  discord-message: "white"
 ```
+
+## Bugs / Ошибки
+
+Нашли баг? Пишите:
+- Discord: **hanter_mine**
+- Telegram: **@wan2der**
 
 ## License / Лицензия
 
