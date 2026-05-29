@@ -126,7 +126,7 @@ colors:
 
 Нашли баг? Пишите:
 - Discord: **hanter_mine**
-- Telegram: **@wan2der**
+- Telegram: **@wa2nder**
 
 ## License / Лицензия
 
