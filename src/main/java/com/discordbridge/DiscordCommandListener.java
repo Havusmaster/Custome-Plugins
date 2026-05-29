@@ -3,6 +3,8 @@ package com.discordbridge;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import java.awt.Color;
@@ -39,10 +41,10 @@ public class DiscordCommandListener extends ListenerAdapter {
         }
 
         String authorName = event.getAuthor().getName();
-        Bukkit.broadcastMessage(
-            plugin.getConfig().getString("format.discord-to-minecraft", "<gray>[Discord] <aqua>%s: <white>%s")
-                .formatted(authorName, message)
-        );
+        String raw = plugin.getConfig().getString("format.discord-to-minecraft", "<gray>[Discord] <aqua>%s: <white>%s")
+            .formatted(authorName, message);
+        Component component = MiniMessage.miniMessage().deserialize(raw);
+        Bukkit.broadcast(component);
     }
 
     private void handleListCommand(MessageReceivedEvent event) {
