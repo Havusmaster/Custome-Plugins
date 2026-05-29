@@ -1,0 +1,14 @@
+# Discord Bot Token (https://discord.com/developers/applications)
+# Оставь пустым, если не используешь Discord-синхронизацию
+bot-token: ""
+
+# ID канала для синхронизации чата
+chat-channel-id: ""
+
+# ID бота (чтобы игнорировать свои же сообщения)
+bot-user-id: ""
+
+# Форматы сообщений
+format:
+  minecraft-to-discord: "**%s**: %s"
+  discord-to-minecraft: "<gray>[Discord] <aqua>%s: <white>%s"
