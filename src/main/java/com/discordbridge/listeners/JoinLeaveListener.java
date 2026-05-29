@@ -34,7 +34,7 @@ public class JoinLeaveListener implements Listener {
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerJoin(PlayerJoinEvent event) {
-        if (!plugin.getDiscordBot().isConnected()) return;
+        if (!plugin.isBotConnected()) return;
 
         Player player = event.getPlayer();
         String randomMsg = joinMessages.get(random.nextInt(joinMessages.size()));
@@ -49,7 +49,7 @@ public class JoinLeaveListener implements Listener {
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerQuit(PlayerQuitEvent event) {
-        if (!plugin.getDiscordBot().isConnected()) return;
+        if (!plugin.isBotConnected()) return;
 
         Player player = event.getPlayer();
         String randomMsg = quitMessages.get(random.nextInt(quitMessages.size()));

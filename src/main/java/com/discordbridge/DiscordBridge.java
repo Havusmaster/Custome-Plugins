@@ -59,4 +59,8 @@ public class DiscordBridge extends JavaPlugin {
     public DiscordBot getDiscordBot() {
         return discordBot;
     }
+
+    public boolean isBotConnected() {
+        return discordBot != null && discordBot.isConnected();
+    }
 }

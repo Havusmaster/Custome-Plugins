@@ -53,7 +53,7 @@ public class DiscordCommandListener extends ListenerAdapter {
     }
 
     private void handleListCommand(MessageReceivedEvent event) {
-        if (!plugin.getDiscordBot().isConnected()) return;
+        if (!plugin.isBotConnected()) return;
 
         List<Player> players = List.copyOf(Bukkit.getOnlinePlayers());
 

@@ -18,7 +18,7 @@ public class ChatListener implements Listener {
 
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerChat(AsyncChatEvent event) {
-        if (!plugin.getDiscordBot().isConnected()) return;
+        if (!plugin.isBotConnected()) return;
 
         Player player = event.getPlayer();
         String playerName = player.getName();
