@@ -44,7 +44,7 @@ public class DiscordCommandListener extends ListenerAdapter {
         String prefixColor = plugin.getConfig().getString("colors.discord-prefix", "gray");
         String nameColor = plugin.getConfig().getString("colors.discord-name", "aqua");
         String msgColor = plugin.getConfig().getString("colors.discord-message", "white");
-        String fmt = plugin.getConfig().getString("format.discord-to-minecraft", "<gray>[Discord] <aqua>%s: <white>%s")
+        String fmt = plugin.getConfig().getString("format.discord-to-minecraft", "<bold><gold>G</bold> <gray>[Discord] <aqua>%s: <white>%s")
             .replace("{prefix}", "<" + prefixColor + ">")
             .replace("{name}", "<" + nameColor + ">")
             .replace("{message}", "<" + msgColor + ">");

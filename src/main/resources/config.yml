@@ -10,8 +10,10 @@ bot-user-id: ""
 
 # Форматы сообщений
 format:
+  global: "<bold><gold>G</bold> <gray>%s: <white>%s"
+  local: "<bold><green>L</bold> <gray>%s: <white>%s"
   minecraft-to-discord: "**%s**: %s"
-  discord-to-minecraft: "<{prefix}>[Discord] <{name}>%s: <{message}>%s"
+  discord-to-minecraft: "<bold><gold>G</bold> <{prefix}>[Discord] <{name}>%s: <{message}>%s"
 
 # Цвета для Discord -> Minecraft чата
 # Доступные цвета: black, dark_blue, dark_green, dark_aqua, dark_red, dark_purple,
