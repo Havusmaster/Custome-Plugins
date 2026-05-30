@@ -40,7 +40,7 @@ public class ChatListener implements Listener {
         Component component;
 
         if (isGlobal) {
-            String format = plugin.getConfig().getString("format.global", "<bold><gold>G</bold> <gray>%s: <white>%s");
+            String format = plugin.getConfig().getString("format.global", "<gold>G</gold> <gray>%s: <white>%s");
             component = MiniMessage.miniMessage().deserialize(format.formatted(playerName, message));
             Bukkit.broadcast(component);
 
@@ -49,7 +49,7 @@ public class ChatListener implements Listener {
                 plugin.getDiscordBot().sendMessage(discordFormat.formatted(playerName, message));
             }
         } else {
-            String format = plugin.getConfig().getString("format.local", "<bold><green>L</bold> <gray>%s: <white>%s");
+            String format = plugin.getConfig().getString("format.local", "<gray>L</gray> <gray>%s: <white>%s");
             component = MiniMessage.miniMessage().deserialize(format.formatted(playerName, message));
 
             Location playerLoc = player.getLocation();
